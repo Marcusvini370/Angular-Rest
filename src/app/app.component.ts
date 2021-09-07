@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-rest';
+
+    usuario = {login: '', senha: ''};
+
+    public login(){
+      console.log("Teste Login: " + this.usuario.login + " senha : " + this.usuario.senha)
+    }
 }
