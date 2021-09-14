@@ -1,4 +1,4 @@
-import { LoginServiceService } from './service/login-service.service';
+
 import { Component } from '@angular/core';
 
 
@@ -11,13 +11,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-rest';
 
-    usuario = {login: '', senha: ''};
 
-    constructor(private loginService: LoginServiceService){}
-
-    public login(){
-      this.loginService.login(this.usuario);
-
-    }
 
 }
