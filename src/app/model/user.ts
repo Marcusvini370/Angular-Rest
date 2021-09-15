@@ -1,8 +1,10 @@
 export class User {
+  //classes que vamos carregar da lista do usuário
 
-id: Number;
-login: String;
-nome: String;
-cpf: String;
+  //! atribuição definitiva
+id!: Number;
+login!: String;
+nome!: String;
+cpf!: String;
 
 }
