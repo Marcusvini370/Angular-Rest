@@ -21,4 +21,9 @@ deletarUsuario(id: Number) : Observable<any>{
   return this.http.delete(AppConstants.baseUrl + id, {responseType : 'text'});
 }
 
+// Pesquisa por Nome
+consultaUser(nome:String) : Observable<any> {
+  return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome);
+}
+
 }

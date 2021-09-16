@@ -15,6 +15,7 @@ export class UsuarioComponent implements OnInit {
     {id: 0, nome: "", login: "", cpf: ""},
 ];
 
+
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
@@ -31,7 +32,13 @@ export class UsuarioComponent implements OnInit {
       this.usuarioService.getStudentList().subscribe((data) => {
         this.usuarios = data;
       });
+    });
+  }
 
+  nome!: string;
+  consultarUser(){
+    this.usuarioService.consultaUser(this.nome).subscribe(data =>{
+      this.usuarios = data;
     });
   }
 
