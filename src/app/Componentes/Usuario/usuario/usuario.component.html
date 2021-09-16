@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Lista</title>
 </head>
 <body>
 
@@ -14,6 +14,7 @@
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
+        <th scope="col">Ação</th>
       </thead>
 
       <tbody>
@@ -21,6 +22,7 @@
         <td>{{usuario.id}}</td>
         <td>{{usuario.nome}}</td>
         <td>{{usuario.cpf}}</td>
+        <td><button (click)="deleteUsuario(usuario.id)" class="btn btn-primary">Delete</button></td>
       </tr>
       </tbody>
 

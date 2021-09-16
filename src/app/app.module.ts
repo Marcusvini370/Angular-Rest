@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component'; /* Requisições via ajax
 import { RouterModule,  Routes } from '@angular/router';
 import {ModuleWithProviders} from '@angular/compiler/src/core';
 import { LoginComponent } from './login/login.component';
-import { UsuarioComponent } from './componentes/usuario/usuario/usuario.component';
+import { UsuarioComponent } from './Componentes/Usuario/usuario/usuario.component';
 
 
 
@@ -44,7 +44,11 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     routes,
     HttpInterceptorModule
     ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+
+}
