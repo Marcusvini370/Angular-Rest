@@ -12,7 +12,7 @@ export class UsuarioComponent implements OnInit {
   //vem uma lista de usuári em forma de um array
   usuarios: Array<User> = [
 
-    {id: 0, nome: "", login: "", cpf: ""},
+    {id: 0, nome: "", login: "", cpf: "", senha: "" },
 ];
 
 
@@ -24,6 +24,7 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
+  // deletação de usuário
   deleteUsuario(id:Number){
     this.usuarioService.deletarUsuario(id).subscribe(data => {
       console.log("retorno do  método delete : " + data);
@@ -35,6 +36,8 @@ export class UsuarioComponent implements OnInit {
     });
   }
 
+
+  // Busca por nome
   nome!: string;
   consultarUser(){
     this.usuarioService.consultaUser(this.nome).subscribe(data =>{

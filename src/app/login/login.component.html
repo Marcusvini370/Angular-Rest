@@ -28,7 +28,7 @@
       <label for="user">Senha:</label>
       <input type="password" class="form-control" #senha="ngModel"  [(ngModel)] = "usuario.senha" id="senha" name="senha" placeholder="Informe a Senha" required>
 
-      <div *ngIf="email.invalid" class="alert alert-danger">
+      <div *ngIf="senha.invalid" class="alert alert-danger">
         Senha deve ser informada
     </div>
 

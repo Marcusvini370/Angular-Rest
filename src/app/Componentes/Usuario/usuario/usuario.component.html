@@ -15,6 +15,7 @@
       <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" placeholder="Pesquisa por Nome">
     </div>
     <button type="button" (click)="consultarUser()" class="btn btn-primary mb-2">Buscar</button>
+    <button type="button" [routerLink]="['/usuarioAdd']" class="btn btn-warning mb-2 ml-2">Novo</button>
   </form>
 
   <table class="table">
@@ -23,7 +24,8 @@
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
-        <th scope="col">Ação</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Editar</th>
       </thead>
 
       <tbody>
@@ -32,6 +34,7 @@
         <td>{{usuario.nome}}</td>
         <td>{{usuario.cpf}}</td>
         <td><button (click)="deleteUsuario(usuario.id)" class="btn btn-primary">Delete</button></td>
+        <td><button [routerLink]="['/usuarioAdd', usuario.id]" class="btn btn-success">Editar</button></td>
       </tr>
       </tbody>
 

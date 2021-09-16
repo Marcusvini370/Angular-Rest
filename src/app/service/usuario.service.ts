@@ -26,4 +26,19 @@ consultaUser(nome:String) : Observable<any> {
   return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome);
 }
 
+//Edição
+getUsuario(id: any) : Observable<any> {
+  return this.http.get<any>(AppConstants.baseUrl + id);
+}
+
+// cadastro de usuário
+salvarUsuario(user: any) : Observable<any>{
+  return this.http.post<any>(AppConstants.baseUrl, user);
+}
+
+// update de usuário
+updateUsuario(user: any) : Observable<any>{
+  return this.http.put<any>(AppConstants.baseUrl, user);
+}
+
 }

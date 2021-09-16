@@ -12,6 +12,8 @@ import { RouterModule,  Routes } from '@angular/router';
 import {ModuleWithProviders} from '@angular/compiler/src/core';
 import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './Componentes/Usuario/usuario/usuario.component';
+import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioadd/usuarioadd.component';
+
 
 
 
@@ -21,7 +23,9 @@ export const appRouters: Routes = [
   {path : 'home', component : HomeComponent},
   {path: 'login', component : LoginComponent},
   {path: '', component : LoginComponent},
-  {path: 'usuarioList', component : UsuarioComponent}
+  {path: 'usuarioList', component : UsuarioComponent},
+  {path: 'usuarioAdd', component : UsuarioaddComponent}, //novo usuário
+  {path: 'usuarioAdd/:id', component : UsuarioaddComponent} // edição de usuário
 
 
 ];
@@ -33,7 +37,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     AppComponent,
     HomeComponent,
     LoginComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    UsuarioaddComponent
   ],
   imports: [
     BrowserModule,
