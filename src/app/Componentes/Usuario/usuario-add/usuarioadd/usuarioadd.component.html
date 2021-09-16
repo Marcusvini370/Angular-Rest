@@ -19,17 +19,17 @@
 
 
 <div class="form-group col-md-5 offset-md-0">
-  <label for="nome">Nome</label>
-  <span > *</span>
-  <input type="text" [(ngModel)]="usuario.nome"  name="nome" id="nome" class="form-control" required="true" autocomplete="false"/>
+  <label for="h1 nome">Nome</label>
+  <span class="text-danger" *ngIf="nomeValidate.invalid"> *</span>
+  <input type="text" #nomeValidate="ngModel" [(ngModel)]="usuario.nome"  name="nome" id="nome" class="form-control" required="true" autocomplete="false"/>
 </div>
 </div>
 
 <div class="form-row">
 <div class="form-group col-md-6 offset-md-3">
 <label for="login">Login</label>
-<span> *</span>
-<input type="text" [(ngModel)]="usuario.login"  name="login" id="login" class="form-control" required="true" autocomplete="false" min="4" max="12"/>
+<span  class="text-danger"*ngIf="loginValidate.invalid"> *</span>
+<input type="text" #loginValidate="ngModel" [(ngModel)]="usuario.login"  name="login" id="login" class="form-control" required="true" autocomplete="false" min="4" max="12"/>
 </div>
 
 </div>
@@ -37,16 +37,16 @@
 <div class="form-row">
 <div class="form-group col-md-6 offset-md-3">
   <label for="password">Senha</label>
-  <span> *</span>
-  <input type="password" [(ngModel)]="usuario.senha"  name="senha" id="senha" class="form-control" required="true" autocomplete="false" min="6" max="12"/>
+  <span class="text-danger" *ngIf="senhaValidate.invalid"> *</span>
+  <input type="password" #senhaValidate="ngModel" [(ngModel)]="usuario.senha"  name="senha" id="senha" class="form-control" required="true" autocomplete="false" min="6" max="12"/>
 </div>
 </div>
 
 <div class="form-row">
   <div class="form-group col-md-6 offset-md-3">
     <label for="cpf">CPF</label>
-    <span> *</span>
-    <input type="text" [(ngModel)]="usuario.cpf"  name="cpf" id="cpf" class="form-control" required="true" autocomplete="false" min="11" max="11" mask="000.000.000-00" />
+    <span class="text-danger" *ngIf="cpfValidate.invalid"> *</span>
+    <input type="text" #cpfValidate="ngModel" [(ngModel)]="usuario.cpf"  name="cpf" id="cpf" class="form-control" required="true" autocomplete="false" min="11" max="11" mask="000.000.000-00" />
   </div>
   </div>
 
@@ -56,7 +56,7 @@
 
     <div class="form-group col-md-4 offset-md-3">
 
-      <button type="submit" (click)="salvarUser()" class="btn btn-success " >
+      <button type="submit" [disabled]="formValidation.invalid" (click)="salvarUser()" class="btn btn-success" >
         Salvar
       </button>
 
