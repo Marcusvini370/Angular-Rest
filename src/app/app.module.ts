@@ -13,6 +13,7 @@ import {ModuleWithProviders} from '@angular/compiler/src/core';
 import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './Componentes/Usuario/usuario/usuario.component';
 import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioadd/usuarioadd.component';
+import { GuardiaoGuard } from './service/guardiao.guard';
 
 
 
@@ -20,12 +21,12 @@ import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioad
 
 export const appRouters: Routes = [
 
-  {path : 'home', component : HomeComponent},
+  {path : 'home', component : HomeComponent, canActivate: [GuardiaoGuard]},
   {path: 'login', component : LoginComponent},
   {path: '', component : LoginComponent},
-  {path: 'usuarioList', component : UsuarioComponent},
-  {path: 'usuarioAdd', component : UsuarioaddComponent}, //novo usuário
-  {path: 'usuarioAdd/:id', component : UsuarioaddComponent} // edição de usuário
+  {path: 'usuarioList', component : UsuarioComponent, canActivate: [GuardiaoGuard]},
+  {path: 'usuarioAdd', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]}, //novo usuário
+  {path: 'usuarioAdd/:id', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]} // edição de usuário
 
 
 ];
