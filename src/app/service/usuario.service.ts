@@ -39,6 +39,7 @@ salvarUsuario(user: any) : Observable<any>{
 // update de usuário
 updateUsuario(user: any) : Observable<any>{
   return this.http.put<any>(AppConstants.baseUrl, user);
+   //http://localhost:8080/cursospringrestapi/usuario/id
 }
 
 userAutenticado(){
@@ -49,6 +50,10 @@ userAutenticado(){
   return false;
 }
 
+}
+
+removerTelefone(id: any) : Observable<any> {
+  return this.http.delete<any>(AppConstants.baseUrl + 'removerTelefone/' + id)
 }
 
 }

@@ -12,7 +12,7 @@ export class UsuarioComponent implements OnInit {
   //vem uma lista de usuári em forma de um array
   usuarios: Array<User> = [
 
-    {id: 0, nome: "", login: "", cpf: "", senha: "" },
+    {id: 0, nome: "", login: "", cpf: "", senha: "", telefones: []},
 ];
 
 

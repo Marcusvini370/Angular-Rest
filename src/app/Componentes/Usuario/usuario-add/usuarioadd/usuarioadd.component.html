@@ -50,6 +50,35 @@
   </div>
   </div>
 
+  <div class="card text-center col-md-6 offset-md-3">
+    <div class="card-header">Telefone de Contato</div>
+    <div class="card-body pl-1">
+      <div class="form-row">
+        <label>Número:</label>
+        <input type="tel" class="form-control"  [(ngModel)]="telefone.numero"
+          id="numero" name="numero"/>
+          <!--name tem que ser o mesmo que do atributo numero-->
+          <label>Tipo:</label>
+          <input type="text" class="form-control"   id="tipo" name="tipo"  [(ngModel)]="telefone.tipo">
+        <button class="btn btn-success mt-2" (click)="addFone()">
+          Adicionar
+        </button>
+        </div>
+    </div>
+  </div>
+
+   <table class="table table-bordered col-md-6 offset-md-3 mt-4">
+     <tbody>
+       <tr *ngFor="let fone of usuario.telefones; let i = index;">
+         <td>{{fone.id}}</td>
+         <td>{{fone.numero}}</td>
+         <td>{{fone.tipo}}</td>
+         <td><button class="btn btn-danger" (click)="deletarTelfone(fone.id, i)">Delete
+
+         </button></td>
+       </tr>
+     </tbody>
+   </table>
 
 
   <div class="form-row ">

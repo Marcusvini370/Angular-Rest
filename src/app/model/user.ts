@@ -1,3 +1,5 @@
+import { Telefone } from "./telefone";
+
 export class User {
   //classes que vamos carregar da lista do usuário
 
@@ -7,5 +9,7 @@ login!: String;
 nome!: String;
 cpf!: String;
 senha!: String;
+
+telefones!: Array<Telefone>;
 
 }
