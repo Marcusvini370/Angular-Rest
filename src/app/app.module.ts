@@ -15,6 +15,7 @@ import { UsuarioComponent } from './Componentes/Usuario/usuario/usuario.componen
 import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioadd/usuarioadd.component';
 import { GuardiaoGuard } from './service/guardiao.guard';
 import { NgxMaskModule, IConfig} from 'ngx-mask';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -52,7 +53,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     HttpClientModule,
     routes,
     HttpInterceptorModule,
-    NgxMaskModule.forRoot(optionsMask)
+    NgxMaskModule.forRoot(optionsMask),
+    NgxPaginationModule
     ],
 
   providers: [],

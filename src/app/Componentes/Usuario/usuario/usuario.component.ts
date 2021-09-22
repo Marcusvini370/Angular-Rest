@@ -14,7 +14,8 @@ export class UsuarioComponent implements OnInit {
 
     {id: 0, nome: "", login: "", cpf: "", senha: "", telefones: []},
 ];
-
+        p: any;
+        total: any;
 
   constructor(private usuarioService: UsuarioService) {}
 
