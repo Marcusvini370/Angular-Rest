@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './Componentes/Usuario/usuario/usuario.component';
 import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioadd/usuarioadd.component';
 import { GuardiaoGuard } from './service/guardiao.guard';
+import { NgxMaskModule, IConfig} from 'ngx-mask';
 
 
 
@@ -30,6 +31,8 @@ export const appRouters: Routes = [
 
 
 ];
+
+export const optionsMask : Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
 
@@ -48,7 +51,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     FormsModule,
     HttpClientModule,
     routes,
-    HttpInterceptorModule
+    HttpInterceptorModule,
+    NgxMaskModule.forRoot(optionsMask)
     ],
 
   providers: [],
