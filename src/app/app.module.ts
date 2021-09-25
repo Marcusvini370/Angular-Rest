@@ -53,7 +53,7 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     HttpClientModule,
     routes,
     HttpInterceptorModule,
-    NgxMaskModule.forRoot(optionsMask),
+    NgxMaskModule.forRoot( {dropSpecialCharacters: false}),
     NgxPaginationModule
     ],
 

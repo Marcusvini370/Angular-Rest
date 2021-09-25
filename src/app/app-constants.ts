@@ -6,4 +6,7 @@ public static get baseLogin(): string {return this.baseServidor + "springrestapi
 
 public static get baseUrl(): string {return this.baseServidor + "springrestapi/usuario/"}
 
+public static get getBaseUrlPath() : string {return this.baseServidor + 'springrestapi/'}
+
+
 }

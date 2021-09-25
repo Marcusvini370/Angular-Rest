@@ -19,22 +19,27 @@ export class UsuarioComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService) {}
 
-  ngOnInit(): void {
-    this.usuarioService.getStudentList().subscribe((data) => {
-      this.usuarios = data;
+  ngOnInit(): void { //carrega a lista de  usuario qnd inicia essa url
+    this.usuarioService.getUsuarioList().subscribe(data => {
+      this.usuarios = data.content; //vai vir do backend e vai adicionar na nossa variavel data
+      this.total = data.totalElements; //getTotalElements carrega todos
     });
   }
 
   // deletação de usuário
-  deleteUsuario(id:Number){
+  deleteUsuario(id:Number, index: any){
 
     if (confirm('Deseja mesmo remover?')){
 
-    this.usuarioService.deletarUsuario(id).subscribe(data => {
+        this.usuarioService.deletarUsuario(id).subscribe(data => {
+        this.usuarios.splice(index, 1); /* Remover da tela */
+
+
+
       //Recarrega a lista após a exclusão
-      this.usuarioService.getStudentList().subscribe((data) => {
-        this.usuarios = data;
-      });
+     // //this.usuarioService.getUsuarioList().subscribe(data => {
+      //  this.usuarios = data;
+     // });
     });
   }
   }
@@ -43,10 +48,38 @@ export class UsuarioComponent implements OnInit {
   // Busca por nome
   nome!: string;
   consultarUser(){
-    this.usuarioService.consultaUser(this.nome).subscribe(data =>{
-      this.usuarios = data;
-    });
+
+    if (this.nome === '' ) {
+
+      this.usuarioService.getUsuarioList().subscribe(data => {
+        this.usuarios = data.content; //vai vir do backend e vai adicionar na nossa variavel data
+        this.total = data.totalElements; //getTotalElements carrega todos
+      });
+
+    }else {
+      this.usuarioService.consultarUser(this.nome ).subscribe(data =>{
+        this.usuarios = data.content;
+        this.total = data.totalElements;
+      });
+
+    }
+
   }
 
 
+  carregarPagina(pagina: any){
+    if(this.nome !== '') {
+      this.usuarioService.consultarUserPorPage(this.nome, pagina -1).subscribe(data => {
+        this.usuarios = data.content; //pega a lista de elemento do spring data
+        this.total = data.totalElements; //seta todos elemento
+      });
+    }else {
+      this.usuarioService.getUsuarioListPage(pagina -1).subscribe(data => {
+        this.usuarios = data.content; //vai vir do backend e vai adicionar na nossa variavel data
+        this.total = data.totalElements; //getTotalElements carrega todos
+    });
+    }
+  }
+
 }
+

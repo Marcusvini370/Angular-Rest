@@ -12,8 +12,12 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   // Método de Listagem
-  getStudentList(): Observable<any> {
+  getUsuarioList(): Observable<any> {
     return this.http.get<any>(AppConstants.baseUrl);
+  }
+
+  getUsuarioListPage(pagina: any): Observable<any> {
+    return this.http.get<any>(AppConstants.baseUrl + 'page/' + pagina);
   }
 
   //Método de Deletar um usuário
@@ -22,8 +26,18 @@ deletarUsuario(id: Number) : Observable<any>{
 }
 
 // Pesquisa por Nome
-consultaUser(nome:String) : Observable<any> {
+consultarUser(nome:String) : Observable<any> {
+  //nossa url pra os métodos com usuarop + nosso endpoint e o que vai ser consultado
+  //http://localhost:8080/cursospringrestapi/usuario/buscarPorNome/jhon
   return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome);
+
+}
+
+consultarUserPorPage(nome:String, page: Number) : Observable<any> {
+  //consultar usuário por páginaçãop com nome
+
+  return this.http.get(AppConstants.baseUrl + "usuarioPorNome/" + nome + '/page/' + page);
+
 }
 
 //Edição
