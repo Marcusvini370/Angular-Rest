@@ -16,6 +16,9 @@ import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioad
 import { GuardiaoGuard } from './service/guardiao.guard';
 import { NgxMaskModule, IConfig} from 'ngx-mask';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 
@@ -54,7 +57,10 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     routes,
     HttpInterceptorModule,
     NgxMaskModule.forRoot( {dropSpecialCharacters: false}),
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbAlertModule
+
+
     ],
 
   providers: [],
