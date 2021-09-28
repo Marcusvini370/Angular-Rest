@@ -1,3 +1,4 @@
+
 import { User } from './../../../../model/user';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
@@ -89,12 +90,19 @@ export class UsuarioaddComponent implements OnInit {
 
   usuario = new User();
   telefone = new Telefone(); //instanciações
+  profissoes: any;
+
 
 
   constructor(private routerActive : ActivatedRoute,  private userService: UsuarioService) { }
 
 
   ngOnInit(): void {
+
+    this.userService.getProfissaoList().subscribe(data =>{
+      this.profissoes = data;
+    });
+
      //vai pegar o id que está editando
    let id = this.routerActive.snapshot.paramMap.get('id');
 
@@ -107,6 +115,7 @@ export class UsuarioaddComponent implements OnInit {
         this.usuario.cpf = data.userCpf;
         this.usuario.senha = data.senha;
         this.usuario.telefones = data.telefones;
+        this.usuario.dataNascimento = data.dataNascimento;
     });
     }
     }

@@ -67,7 +67,11 @@ userAutenticado(){
 }
 
 removerTelefone(id: any) : Observable<any> {
-  return this.http.delete<any>(AppConstants.baseUrl + 'removerTelefone/' + id)
+  return this.http.delete<any>(AppConstants.baseUrl + 'removerTelefone/' + id);
+}
+
+getProfissaoList(): Observable<any>{
+    return this.http.get<any>(AppConstants.getBaseUrlPath + 'profissao/');
 }
 
 }

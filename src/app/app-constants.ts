@@ -8,5 +8,4 @@ public static get baseUrl(): string {return this.baseServidor + "springrestapi/u
 
 public static get getBaseUrlPath() : string {return this.baseServidor + 'springrestapi/'}
 
-
 }

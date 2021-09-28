@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profissao } from 'src/app/model/profissao';
 import { User } from 'src/app/model/user';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -12,14 +13,16 @@ export class UsuarioComponent implements OnInit {
   //vem uma lista de usuári em forma de um array
   usuarios: Array<User> = [
 
-    {id: 0, nome: "", login: "", cpf: "", senha: "", telefones: [], dataNascimento: ""},
+    {id: 0, nome: "", login: "", cpf: "", senha: "", telefones: [], dataNascimento: "", profissao: new Profissao },
 ];
         p: any;
         total: any;
 
+
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void { //carrega a lista de  usuario qnd inicia essa url
+
     this.usuarioService.getUsuarioList().subscribe(data => {
       this.usuarios = data.content; //vai vir do backend e vai adicionar na nossa variavel data
       this.total = data.totalElements; //getTotalElements carrega todos
