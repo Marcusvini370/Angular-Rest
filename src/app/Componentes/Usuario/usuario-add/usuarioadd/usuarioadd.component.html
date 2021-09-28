@@ -88,6 +88,17 @@
   </div>
 </div>
 
+<div class="form-row">
+  <div class="form-group col-md-6 offset-md-3">
+    <label for="salario">Salário</label>
+    <span class="text-danger" *ngIf="salarioValidate.invalid"> *</span>
+    <input   #salarioValidate="ngModel" [(ngModel)]="usuario.salario" name="salario"
+    id="salario" class="form-control" required="true" autocomplete="false"
+    currencyMask [options]="{prefix : 'R$', thousands: '.', decimal : ','}" />
+
+  </div>
+  </div>
+
 
 
   <div class="card text-center col-md-6 offset-md-3">

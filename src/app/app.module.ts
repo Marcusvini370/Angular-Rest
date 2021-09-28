@@ -17,6 +17,7 @@ import { GuardiaoGuard } from './service/guardiao.guard';
 import { NgxMaskModule, IConfig} from 'ngx-mask';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 
 
@@ -58,7 +59,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     HttpInterceptorModule,
     NgxMaskModule.forRoot( {dropSpecialCharacters: false}),
     NgxPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    NgxCurrencyModule
 
 
     ],
