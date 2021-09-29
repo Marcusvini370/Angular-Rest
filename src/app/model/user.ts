@@ -5,12 +5,12 @@ export class User {
   //classes que vamos carregar da lista do usuário
 
   //! atribuição definitiva
-id!: Number;
-login!: String;
-nome!: String;
-cpf!: String;
-senha!: String;
-dataNascimento!: String;
+id!: number;
+login!: string;
+nome!: string;
+cpf!: string;
+senha!: string;
+dataNascimento!: string;
 
   profissao: Profissao = new Profissao;
   salario! : DoubleRange;

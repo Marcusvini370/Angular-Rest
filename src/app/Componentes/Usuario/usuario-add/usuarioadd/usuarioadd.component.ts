@@ -88,7 +88,7 @@ function validarData(valor: any) {
 })
 export class UsuarioaddComponent implements OnInit {
 
-  usuario = new User();
+  usuario = {} as User;
   telefone = new Telefone(); //instanciações
   profissoes: any;
 
@@ -108,14 +108,11 @@ export class UsuarioaddComponent implements OnInit {
 
     if (id != null){
       this.userService.getUsuario(id).subscribe(data => {
+
+        this.usuario = data;
         console.log(data);
-        this.usuario.id = data.id;
-        this.usuario.login = data.userLogin;
-        this.usuario.nome = data.userNome;
-        this.usuario.cpf = data.userCpf;
-        this.usuario.senha = data.senha;
-        this.usuario.telefones = data.telefones;
-        this.usuario.dataNascimento = data.dataNascimento;
+
+
     });
     }
     }

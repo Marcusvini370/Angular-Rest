@@ -76,11 +76,10 @@
 
 
 </div>
-
 <div class="form-row">
   <div class="form-group col-md-4 offset-md-3">
     <label for="profissao">Profissão</label>
-    <span class="text-danger"*ngIf="profissaoValidate.invalid">*</span>
+    <span *ngIf="profissaoValidate.invalid">*</span>
     <select [(ngModel)]="usuario.profissao.id" id="profissao" name="profissao"
       #profissaoValidate="ngModel" class="form-control" required="true">
       <option [ngValue]="p.id" *ngFor="let p of profissoes">{{p.descricao}}</option>
@@ -88,10 +87,10 @@
   </div>
 </div>
 
-<div class="form-row">
+ <div class="form-row">
   <div class="form-group col-md-6 offset-md-3">
-    <label for="salario">Salário</label>
-    <span class="text-danger" *ngIf="salarioValidate.invalid"> *</span>
+    <label for="cpf">Salário</label>
+    <span *ngIf="salarioValidate.invalid"> *</span>
     <input   #salarioValidate="ngModel" [(ngModel)]="usuario.salario" name="salario"
     id="salario" class="form-control" required="true" autocomplete="false"
     currencyMask [options]="{prefix : 'R$', thousands: '.', decimal : ','}" />

@@ -2,6 +2,7 @@ import { AppConstants } from './../app-constants';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import {Router} from '@angular/router';
 export class LoginServiceService {
 
   constructor(private http: HttpClient, private router: Router) { }
+
+
 
   login(usuario: { login: string; senha?: string; }){
 
@@ -33,4 +36,24 @@ export class LoginServiceService {
     );
   }
 
+  recuperar( login: string){
+
+    let user = new User();
+    user.login = login;
+    return this.http.post(AppConstants.getBaseUrlPath + 'recuperar/', user)
+    .subscribe(data => {
+
+        //converteu para um json , tratou essa string
+     alert(JSON.parse(JSON.stringify(data)).error);//error que está tratando no back-end
+
+
+    },
+    error => {
+      console.error('Erro ao Recuperar Acesso');
+      alert('Erro ao recuperar Acesso!')
+    })
+
 }
+}
+
+
