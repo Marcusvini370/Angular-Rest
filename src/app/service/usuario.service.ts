@@ -74,4 +74,16 @@ getProfissaoList(): Observable<any>{
     return this.http.get<any>(AppConstants.getBaseUrlPath + 'profissao/');
 }
 
+
+downloadPdfRelatorio() {
+  return this.http.get(AppConstants.baseUrl + 'relatorio', {responseType : 'text'}).subscribe(data => {
+    //angula 8  document.querySelector('iframe').src = data;
+
+    //angular 12, src = midia imagem etc , data = os dados do pdf
+    const iframe = document.querySelector('iframe');
+    iframe?.setAttribute('src', data);
+  });
+}
+
+
 }
