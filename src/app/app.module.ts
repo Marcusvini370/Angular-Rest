@@ -12,7 +12,8 @@ import { RouterModule,  Routes } from '@angular/router';
 import {ModuleWithProviders} from '@angular/compiler/src/core';
 import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './Componentes/Usuario/usuario/usuario.component';
-import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioadd/usuarioadd.component';
+import { UsuarioaddComponent } from './Componentes/Usuario/usuario-add/usuarioadd.component';
+import { UsuarioReportComponent } from './Componentes/Usuario/usuario-report/usuario-report.component';
 import { GuardiaoGuard } from './service/guardiao.guard';
 import { NgxMaskModule, IConfig} from 'ngx-mask';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -32,7 +33,8 @@ export const appRouters: Routes = [
   {path: '', component : LoginComponent},
   {path: 'usuarioList', component : UsuarioComponent, canActivate: [GuardiaoGuard]},
   {path: 'usuarioAdd', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]}, //novo usuário
-  {path: 'usuarioAdd/:id', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]} // edição de usuário
+  {path: 'usuarioAdd/:id', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]}, // edição de usuário
+  {path: 'userReport', component : UsuarioReportComponent, canActivate: [GuardiaoGuard]}
 
 
 ];
@@ -47,7 +49,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     HomeComponent,
     LoginComponent,
     UsuarioComponent,
-    UsuarioaddComponent
+    UsuarioaddComponent,
+    UsuarioReportComponent
   ],
   imports: [
     BrowserModule,
