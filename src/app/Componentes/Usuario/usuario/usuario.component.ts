@@ -14,7 +14,7 @@ export class UsuarioComponent implements OnInit {
   usuarios: Array<User> = [
 
     {id: 0, nome: "", login: "", cpf: "", senha: "", telefones: [], dataNascimento: "",
-     profissao: new Profissao, salario: {}  },
+     profissao: new Profissao, salario: {}},
 ];
         p: any;
         total: any;

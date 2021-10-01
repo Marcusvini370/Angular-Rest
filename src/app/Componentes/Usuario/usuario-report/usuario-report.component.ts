@@ -28,7 +28,7 @@ export class FormatDateAdapter implements NgbDateAdapter<string>{
   }
   //pega uma data estruturada e retorna em string
   toModel(date: NgbDateStruct | null): string | null {//estrutura de data ou null string en null tb
-    return date? date.day + this.DELIMITER + date.month + this.DELIMITER + date.year : null;
+    return date? validarData(date.day) + this.DELIMITER + validarData(date.month) + this.DELIMITER + date.year : null;
 
   }
 
@@ -66,7 +66,7 @@ export class FormataData extends NgbDateParserFormatter {
     //concatenando
   }
   toModel(date: NgbDateStruct | null): string | null {
-    return date? date.day + this.DELIMITER + date.month +
+    return date? validarData(date.day) + this.DELIMITER + validarData(date.month) +
     this.DELIMITER + date.year : null;
 }
 
@@ -96,9 +96,12 @@ UserReport = new UserReport();
 
 
   imprimeRelatorio(){
-    console.log(this.UserReport);
+    this.userService.downloadPdfRelatorioParam(this.UserReport);
 
   }
+
+
+
 
   }
 

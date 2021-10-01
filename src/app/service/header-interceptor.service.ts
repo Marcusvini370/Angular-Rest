@@ -8,8 +8,9 @@ import { catchError, tap } from 'rxjs/operators';
 export class HeaderInterceptorService implements HttpInterceptor {
 
   constructor() { }
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if(localStorage.getItem('token') !== null) {
 
@@ -30,6 +31,7 @@ export class HeaderInterceptorService implements HttpInterceptor {
       , catchError(this.processaError))
 
   }else { //se não tem o token
+
     return next.handle(req).pipe(catchError(this.processaError));//retorna passando a requsição original / normal
   }
 }
@@ -40,7 +42,13 @@ processaError(error: HttpErrorResponse) {
     console.error(error.error);
     errorMessage = 'Error: ' + error.error.message;
   }else {
-     errorMessage = 'Status: ' + error.error.code + '\nMensagem: ' + error.error.error;
+
+    if(error.status == 403){
+      errorMessage = "Acesso negado: Faça o login novamente."
+    }else{
+      errorMessage = 'Status: ' + error.error.code + '\nMensagem: ' + error.error.error;
+    }
+
   }
   window.alert(errorMessage);
   return throwError(errorMessage);

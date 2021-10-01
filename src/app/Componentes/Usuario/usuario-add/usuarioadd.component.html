@@ -14,7 +14,7 @@
 <div class="form-group col-md-1 offset-md-3">
 <label for="id">ID</label>
 <input type="text" [(ngModel)]="usuario.id"  name="id" class="form-control" id="id" readonly autocomplete="false"/>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+
 </div>
 
 
@@ -74,13 +74,12 @@
     </div>
 
 
-
 </div>
 <div class="form-row">
   <div class="form-group col-md-4 offset-md-3">
     <label for="profissao">Profissão</label>
     <span *ngIf="profissaoValidate.invalid">*</span>
-    <select [(ngModel)]="usuario.profissao.id" id="profissao" name="profissao"
+    <select [(ngModel)]="profissoes" id="profissao" name="profissao"
       #profissaoValidate="ngModel" class="form-control" required="true">
       <option [ngValue]="p.id" *ngFor="let p of profissoes">{{p.descricao}}</option>
     </select>
@@ -97,8 +96,6 @@
 
   </div>
   </div>
-
-
 
   <div class="card text-center col-md-6 offset-md-3">
     <div class="card-header">Telefone de Contato</div>
@@ -135,10 +132,10 @@
 
     <div class="form-group col-md-4 offset-md-3">
 
-      <button type="submit" [disabled]="formValidation.invalid" (click)="salvarUser()" class="btn btn-success" >
+      <button type="submit"  (click)="salvarUser()" class="btn btn-success" >
         Salvar
       </button>
-
+     <!--[disabled]="formValidation.invalid" -->
 
 
       <button type="button" (click)="novo()" class="btn btn-primary  ml-2">
@@ -153,6 +150,8 @@
   </div>
 
   </form>
+
+
 
 </body>
 </html>

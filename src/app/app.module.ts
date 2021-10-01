@@ -19,8 +19,8 @@ import { NgxMaskModule, IConfig} from 'ngx-mask';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxCurrencyModule } from 'ngx-currency';
-
-
+import { ChartsModule } from 'ng2-charts';
+import { BarChartComponent } from './Componentes/bar-chart/bar-chart.component';
 
 
 
@@ -34,7 +34,8 @@ export const appRouters: Routes = [
   {path: 'usuarioList', component : UsuarioComponent, canActivate: [GuardiaoGuard]},
   {path: 'usuarioAdd', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]}, //novo usuário
   {path: 'usuarioAdd/:id', component : UsuarioaddComponent, canActivate: [GuardiaoGuard]}, // edição de usuário
-  {path: 'userReport', component : UsuarioReportComponent, canActivate: [GuardiaoGuard]}
+  {path: 'userReport', component : UsuarioReportComponent, canActivate: [GuardiaoGuard]},
+  {path: 'chart', component : BarChartComponent, canActivate: [GuardiaoGuard]}
 
 
 ];
@@ -50,7 +51,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     LoginComponent,
     UsuarioComponent,
     UsuarioaddComponent,
-    UsuarioReportComponent
+    UsuarioReportComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
@@ -63,8 +65,8 @@ export const routes : ModuleWithProviders = RouterModule.forRoot(appRouters);
     NgxMaskModule.forRoot( {dropSpecialCharacters: false}),
     NgxPaginationModule,
     NgbAlertModule,
-    NgxCurrencyModule
-
+    NgxCurrencyModule,
+    ChartsModule
 
     ],
 

@@ -1,10 +1,12 @@
 
+
 import { User } from './../../../model/user';
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Telefone } from 'src/app/model/telefone';
 import { NgbDateParserFormatter, NgbDateStruct, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { Profissao } from 'src/app/model/profissao';
 
 
 @Injectable()
@@ -90,7 +92,7 @@ export class UsuarioaddComponent implements OnInit {
 
   usuario = {} as User;
   telefone = new Telefone(); //instanciações
-  profissoes: any;
+  profissoes! : Array<Profissao>;
 
 
 
@@ -165,6 +167,8 @@ export class UsuarioaddComponent implements OnInit {
       this.telefone = new Telefone(); //caso queira adicionar um segundo telefone
       //deixa instanciado
     }
+
+
   }
 
 

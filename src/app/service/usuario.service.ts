@@ -1,3 +1,4 @@
+import { UserReport } from './../model/UserReport';
 import { AppConstants } from './../app-constants';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -71,7 +72,7 @@ removerTelefone(id: any) : Observable<any> {
 }
 
 getProfissaoList(): Observable<any>{
-    return this.http.get<any>(AppConstants.getBaseUrlPath + 'profissao/');
+  return this.http.get<any>(AppConstants.getBaseUrlPath + 'profissao/');
 }
 
 
@@ -84,6 +85,20 @@ downloadPdfRelatorio() {
     iframe?.setAttribute('src', data);
   });
 }
+
+downloadPdfRelatorioParam(userReport: UserReport) {//post envio de dados
+  return this.http.post(AppConstants.baseUrl + 'relatorio/', userReport ,
+  {responseType : 'text'}).subscribe(data => {
+    const iframe = document.querySelector('iframe');
+    iframe?.setAttribute('src', data);
+  });
+}
+
+carregarGrafico() : Observable<any>{
+  return this.http.get(AppConstants.baseUrl + 'grafico');
+}
+
+
 
 
 }

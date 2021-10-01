@@ -12,8 +12,8 @@
     <form #formValidation="ngForm">
       <!--Linha de componentes -->
 
-      <div class="form-row">
-        <div class="form-group offset-md-2">
+      <div class="form-row mt-5">
+        <div class="form-group offset-md-4">
           <label for="dataInicio">Data de Nasc. Início</label>
           <span class="text-danger"> *</span>
           <div class="form-inline">
@@ -83,14 +83,16 @@
             </div>
           </div>
         </div>
+
       </div>
 
 
-
-      <button type="button" class="btn btn-dark mb-2 ml-2"
+      <div class="form-group offset-md-4 mt-2">
+      <button type="button" class="btn btn-dark col-6"
       data-toggle="modal" data-target="#myModal" (click)="imprimeRelatorio()">
       imprimir PDF
      </button>
+     </div>
 
      <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
