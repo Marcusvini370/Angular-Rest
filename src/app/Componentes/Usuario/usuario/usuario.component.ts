@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Profissao } from 'src/app/model/profissao';
 import { User } from 'src/app/model/user';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -14,7 +13,7 @@ export class UsuarioComponent implements OnInit {
   usuarios: Array<User> = [
 
     {id: 0, nome: "", login: "", cpf: "", senha: "", telefones: [], dataNascimento: "",
-     profissao: new Profissao, salario: {}},
+     profissao: "", salario: {}},
 ];
         p: any;
         total: any;

@@ -79,9 +79,13 @@
   <div class="form-group col-md-4 offset-md-3">
     <label for="profissao">Profissão</label>
     <span *ngIf="profissaoValidate.invalid">*</span>
-    <select [(ngModel)]="profissoes" id="profissao" name="profissao"
+    <select [(ngModel)]="usuario.profissao" id="profissao" name="profissao"
       #profissaoValidate="ngModel" class="form-control" required="true">
-      <option [ngValue]="p.id" *ngFor="let p of profissoes">{{p.descricao}}</option>
+      <option>Desenvolvedor Java</option>
+      <option>Analista DBA</option>
+      <option>Gerente de Projetos</option>
+      <option>Analista de Requisitos</option>
+
     </select>
   </div>
 </div>

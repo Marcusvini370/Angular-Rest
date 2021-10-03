@@ -1,4 +1,3 @@
-import { Profissao } from "./profissao";
 import { Telefone } from "./telefone";
 
 export class User {
@@ -11,6 +10,8 @@ nome!: string;
 cpf!: string;
 senha!: string;
 dataNascimento!: string;
+profissao!: string;
+salario! : DoubleRange;
 
 /*
 cep!: string;
@@ -22,8 +23,8 @@ uf!: string;
 , cep: "",  logradouro: "", complemento: "", bairro: "",
      localidade: "", uf: ""  */
 
-  profissao: Profissao = new Profissao;
-  salario! : DoubleRange;
+
+
 
 telefones!: Array<Telefone>;
 
