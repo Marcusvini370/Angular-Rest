@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ```bash
 #Clonar repositório
-gh repo clone Dark1922/Consumindo-API-Spring-Rest-com-Angular.
+gh https://github.com/Marcusvini370/Angular-Rest.git
 
 #Executar o projeto
 npm install
