@@ -1,6 +1,6 @@
 export class AppConstants {
 
-public static get baseServidor(): string { return "http://localhost:8080/" }
+public static get baseServidor(): string { return "https://api-spring-rest-marcus.herokuapp.com/" }
 
 public static get baseLogin(): string {return this.baseServidor + "springrestapi/login"}
 
