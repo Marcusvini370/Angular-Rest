@@ -1,27 +1,37 @@
-# AngularRest
+<h1 align="center"> Projeto Angular Explorando suas Funcionalidades </h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
+## 🔖 Layout / Link de acesso 
 
-## Development server
+Você pode visualizar o layout do projeto através desse link http://angular12-restfull-crud.netlify.app É necessário esperar alguns segundos para que o banco de dados suba,
+usuario de acesso: login: teste senha: teste .
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![angulargif](https://user-images.githubusercontent.com/48605830/135895887-78c6fd15-6324-439f-a91d-9f9ed9596ed2.gif)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 🚀 Tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-## Running unit tests
+- HTML
+- CSS
+- Bootstrap / ng-bootstrap
+- JavaScript/Typescript
+- Angular 12.2.4
+- Spring Rest Api
+- Chart.js
+- DataPicker
+- ngx-currency/ngx-pagination/ngx-mask
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 💻 Projeto
+<p align="justify">Sistema de crud com angular com validações , mascaras , ultilizando uma api em deploy , adicionando token ao cabeçalho do usuário que está acessando o sistema para poder liberar as requisições ajax para ele pode cadastrar , deletar ... , recuperação de senha , mascara de cpf e telefone, gráfico de salários dos usuários cadastrados e pesquisa por nome em paginação, delete por paginação, parametros com relatório e relatórios dos usuários cadastrados.</p>
 
-## Running end-to-end tests
+```bash
+#Clonar repositório
+gh repo clone Dark1922/Consumindo-API-Spring-Rest-com-Angular.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#Executar o projeto
+npm install
+ng serve 
+localhost://4200.
+```
