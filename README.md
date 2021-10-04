@@ -5,8 +5,7 @@
 Você pode visualizar o layout do projeto através desse link https://angular-api-spring-marcus.netlify.app/ É necessário esperar alguns segundos para que o banco de dados suba,
 usuario de acesso: login: teste senha: teste .
 
-![angulargif](https://user-images.githubusercontent.com/48605830/135895887-78c6fd15-6324-439f-a91d-9f9ed9596ed2.gif)
-
+![ang](https://user-images.githubusercontent.com/51136557/135907416-8ca9a464-7938-453d-95b3-a9283b386ac8.gif)
 
 
 ## 🚀 Tecnologias
