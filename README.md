@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 #Clonar repositório
 ```bash
-gh https://github.com/Marcusvini370/Angular-Rest.git
+clone https://github.com/Marcusvini370/Angular-Rest.git
 ```
 #Executar o projeto
 ```bash
